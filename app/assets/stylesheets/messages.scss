@@ -1,0 +1,28 @@
+.body{
+  height:100%;
+  width: 100%;
+  padding:0;
+  margin:0;
+}
+
+.chat-side{
+  height:82px;
+  width:300px;
+  background-color: #253141;
+  &
+
+
+}
+
+
+.header {
+  height: 90px;
+  border-bottom:20px solid #ffa500;
+  background-color: #ff8c00;
+  color: #ffffff;
+  &__logo {
+    text-align: center;
+    font-size: 36px;
+    line-height: 90px;
+  }
+}
