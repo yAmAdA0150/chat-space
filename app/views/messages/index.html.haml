@@ -1,22 +1,53 @@
-!!! 5
-%html
+!!!
+%html{lang: "ja"}
+  %head
   %body
-    %div.left-side
-      %header-left
-        %p yAmAdA
-        %p tab
-      %div.contents
-        %div.group
-          %p testtest
-          %p 画像が投稿されています
-    %div.chat-side
-      %header-chat
-        %div.group
-          %p testtest
-          %p Member : yAmAdA
-        %div.chat
-          %p yAmAdA
-          %p 2019/09/08(sun) 17:17:31
-      %footer
+  .wrapper
+    .contents-left
+      .header
+        .header-box
+          .header-name
+            yAmAdA
+          .header-tabs
+            -# .creat-tab
+            -# = link_to "" do
+            -#   %i.fa.fa-cog
+            -# .edit-tab
+            -# %i.fa.fa-edit
+      .groups
+        .group-box
+          .group-name
+            test
+          .comment
+            test
+    .contents-right
+      .header
+        .group-name
+          test
+        .members-box
+          %ul.member-tag
+            Member : 
+          .members
+            yAmAdA
+        %button.header-edit
+          Edit
+      .chat
+        .chat-box
+          .chat-name-box
+            .name
+              yAmAdA
+            .dates
+              2019/09/08(sun) 00:00:00
+          .message
+            こんにちは
+      .footer
+        .footer-box
+          %form{:action => "/", :method => "post"}
+            %input{:class => "form-box", :type => "text", :text => "text", :placeholder => "type a message",:required => "true"}          
+            .text-box
+              .image-box
+                %i.fa.fa-edit
+          %buttom.footer-send
+            Send
 
-        %div.send_button
+
