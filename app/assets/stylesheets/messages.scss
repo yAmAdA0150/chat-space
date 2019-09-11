@@ -4,7 +4,6 @@ html,body{
 .wrapper{
   height:100%;
   display:flex;
-  
   .contents-left{
     width:300px;
     height:100%;
@@ -39,7 +38,7 @@ html,body{
        }
       } 
     .groups{
-      height: calc(100% - 100px);
+      height: calc(100% - 98px);
       background-color: #2f3e51;
       padding:0 20px;
       color:#FFFFFF;
@@ -95,7 +94,6 @@ html,body{
       }
     }
     .chat{
-      border-top: 1px;
       background-color:#fafafa;
       height:calc(100% - 190px);
       padding:46px 40px;
@@ -127,12 +125,12 @@ html,body{
       }
     }
     .footer{
-      height: 90px;
+      height:90px;
       width:100%;
       background-color: #ddd;
       position: absolute;
       box-sizing: border-box;
-      bottom:0;
+      bottom:0px;
       display:block;
       padding: 20px 40px;
       .footer-box{
@@ -151,16 +149,16 @@ html,body{
             width:100%;
             padding:0 10px;
             box-sizing: border-box;
+          }
             .image-box{
               font-size:1.3rem;
               position: absolute;
-              top: 10px;
-              right: 10px;
+              right:10px;
               cursor: pointer;
               color:black;
-
+              line-height: 50px;
             } 
-          }
+          
         }
         .footer-send{
             width:100px;
