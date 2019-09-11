@@ -1,9 +1,11 @@
+::-webkit-scrollbar { display: none; }
 html,body{
   height:100%;
 }
 .wrapper{
   height:100%;
   display:flex;
+  overflow: hidden;
   .contents-left{
     width:300px;
     height:100%;
@@ -42,6 +44,7 @@ html,body{
       background-color: #2f3e51;
       padding:0 20px;
       color:#FFFFFF;
+      overflow:scroll;
       .group-box{
         padding:20px 0;
         .group-name{
@@ -96,6 +99,7 @@ html,body{
     background-color:#fafafa;
     height:calc(100% - 190px);
     padding:46px 40px;
+    overflow: scroll;
     .chat-box{
       padding-bottom:40px;
       .chat-name-box{
@@ -142,7 +146,7 @@ html,body{
         color: #434a54;
         border-style: none;
         position: relative;
-        .form-box{
+        .formbox{
           height:50px;
           width:100%;
           padding:0 10px;
@@ -173,4 +177,7 @@ html,body{
     }
   }
  }
+}
+webkit-scrollbar {
+  display: none;
 }
