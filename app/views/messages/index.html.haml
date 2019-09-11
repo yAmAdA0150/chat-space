@@ -9,11 +9,11 @@
           .header-name
             yAmAdA
           .header-tabs
-            -# .creat-tab
-            -# = link_to "" do
-            -#   %i.fa.fa-cog
-            -# .edit-tab
-            -# %i.fa.fa-edit
+            .edit-tab
+              = fa_icon 'edit'
+            .create-tab
+              = fa_icon 'cog'
+            
       .groups
         .group-box
           .group-name
@@ -42,11 +42,9 @@
             こんにちは
       .footer
         .footer-box
-          %form{:action => "/", :method => "post"}
-            %input{:class => "form-box", :type => "text", :text => "text", :placeholder => "type a message",:required => "true"}          
-            .text-box
-              .image-box
-                %i.fa.fa-edit
+          %form{:class => "form" ,:action => "/", :method => "post"}
+            %input{:class => "form-box", :type => "text", :text => "text", :placeholder => "type a message",:required => "true"}                
+              = fa_icon "image", class: 'image-box'
           %buttom.footer-send
             Send
 

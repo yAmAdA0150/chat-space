@@ -12,24 +12,31 @@ html,body{
     color:#FFFFFF;
     .header{
       height:100px;
-      line-height:100px;
       padding-left:20px;
+      position:relative;
       .header-box{
         display:flex;
+        line-height: 100px;
         .header-name{
           font-weight: bold;
           font-size: 16px;
           list-style: none;
-          margin-left:20px;
         }
-        // .header-tabs{
-        //   .create-tab{
-        //     content: "\f044";
-        //   }
-        //   .edit-tab{
-        //     content: "\f013";
-        //   }
-        }
+        .header-tabs{
+          height:16px;
+          display:flex; 
+          position: absolute;
+          right:20px;
+          width:40px;
+          .edit-tab{         
+            cursor: pointer;
+            margin-right:5px;
+           }
+          .create-tab{        
+            cursor: pointer;
+          }
+         }
+       }
       } 
     .groups{
       height: calc(100% - 100px);
@@ -71,9 +78,7 @@ html,body{
         .member-tag{
           margin-right : 5px;
         }
-        .members{
-          
-        }
+        .members{}
       }
       .header-edit{
         color: #38aef0;
@@ -134,19 +139,27 @@ html,body{
         display:flex;
         line-height:50px;
         box-sizing: border-box;
-        .form-box{
-          height:50px;
-          width:100%;
-          position:relative;
-          padding:0 40px 0 10px; 
-          box-sizing: border-box;
-          display: inline-block;
-          .text-box{}
-          .image-box{
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
+        height:100%;
+        .form{
+          height: 50px;
+          width:calc(100% - 115px);
+          color: #434a54;
+          border-style: none;
+          position: relative;
+          .form-box{
+            height:50px;
+            width:100%;
+            padding:0 10px;
+            box-sizing: border-box;
+            .image-box{
+              font-size:1.3rem;
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              cursor: pointer;
+              color:black;
+
+            } 
           }
         }
         .footer-send{
