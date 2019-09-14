@@ -1,113 +1,25 @@
 .wrapper
-  .contents-left
+  = render 'shared/side_bar'
+  .chat
     .header
-      .header-box
-        .header-name
-          yAmAdA
-        .header-tabs
-          .edit-tab
-            = fa_icon 'edit'
-          .create-tab
-            = fa_icon 'cog'
-    .groups
-      .group-box
-        .group-name
-          test
-        .comment
-          test
-      .group-box
-        .group-name
-          test
-        .comment
-          test
-      .group-box
-        .group-name
-          test
-        .comment
-          test
-      .group-box
-        .group-name
-          test
-        .comment
-          test
-      .group-box
-        .group-name
-          test
-        .comment
-          test
-      .group-box
-        .group-name
-          test
-        .comment
-          test
-      .group-box
-        .group-name
-          test
-        .comment
-          test
-      .group-box
-        .group-name
-          test
-        .comment
-          test
-  .contents-right
-    .header
-      .group-name
-        test
-      .members-box
-        %ul.member-tag
-          Member : 
-        .members
-          yAmAdA
-      %button.header-edit
-        Edit
-    .chat
-      .chat-box
-        .chat-name-box
-          .name
-            yAmAdA
-          .dates
-            2019/09/08(sun) 00:00:00
-        .message
-          こんにちは
-      .chat-box
-        .chat-name-box
-          .name
-            yAmAdA
-          .dates
-            2019/09/08(sun) 00:00:00
-        .message
-          こんにちは
-      .chat-box
-        .chat-name-box
-          .name
-            yAmAdA
-          .dates
-            2019/09/08(sun) 00:00:00
-        .message
-          こんにちは
-      .chat-box
-        .chat-name-box
-          .name
-            yAmAdA
-          .dates
-            2019/09/08(sun) 00:00:00
-        .message
-          こんにちは
-      .chat-box
-        .chat-name-box
-          .name
-            yAmAdA
-          .dates
-            2019/09/08(sun) 00:00:00
-        .message
-          こんにちは
-    .footer
-      .footer-box
-        %form{class: :form ,action: :/, method: :post}
-          %input{class: :formbox, type: :text, text: :text, placeholder: "type a message", required: :true}                
-            = fa_icon "image", class: 'image-box'
-        %buttom.footer-send
-          Send
-
-
+      .left-header
+        .left-header__title
+          = @group.name
+        %ul.left-header__members
+          Member：
+          %li.member
+            - @group.users.each do |user|
+              = user.name
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
