@@ -19,8 +19,7 @@ $(document).on('turbolinks:load', function() {
       search_list.append(html1);
     }
 
-    $('#user-search-result').on("click", ".chat-group-user__btn--add", function(e) {
-
+    $('body').on("click", ".chat-group-user__btn--add", function(e) {
       $(this).parent().remove();
       var target = e.target;
       var username = $(target).attr('data-user-name');
@@ -42,26 +41,31 @@ $(document).on('turbolinks:load', function() {
     $("#user-search-field").on("keyup", function() {
 
       var input = $("#user-search-field").val();
-      
-      $.ajax({
-        type: 'GET',
-        url: '/users',
-        data: { keyword: input },
-        dataType: 'json'
-      })
-      .done(function(users) {
+
+      if (input.length == 0) {
         $("#user-search-result").empty();
-        if (users.length !== 0) {
-          users.forEach(function(user){
-            appendUser(user);
-          })
+      }
+      else{
+        $.ajax({
+          type: 'GET',
+          url: '/users',
+          data: { keyword: input },
+          dataType: 'json'
+        })
+        .done(function(users) {
+          $("#user-search-result").empty();
+          if (users.length !== 0) {
+            users.forEach(function(user){
+              appendUser(user);
+            })
+            }
+          else {
+            appendErrMsgToHTML("一致する名前はありません");
           }
-        else {
-          appendErrMsgToHTML("一致する名前はありません");
-        }
-      })
-      .fail(function() {
-        alert('名前検索に失敗しました');
-      })
+        })
+        .fail(function() {
+          alert('名前検索に失敗しました');
+        })
+      }
     });
   });
