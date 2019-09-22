@@ -12,7 +12,7 @@
               = user.name
       .right-header
         .right-header__button
-          Edit
+          = link_to 'Edit' , edit_group_path(@group.id), class: "textdeco"
     .messages
       = render @messages
     .form
