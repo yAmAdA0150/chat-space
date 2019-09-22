@@ -33,6 +33,9 @@
       &__button {
         color: $light_blue;
         text-decoration: none;
+        .textdeco{
+          text-decoration: none;
+        }
       }
     }
   }
