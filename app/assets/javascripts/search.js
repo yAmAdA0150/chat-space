@@ -69,3 +69,5 @@ $(document).on('turbolinks:load', function() {
       }
     });
   });
+
+  arn:aws:iam::018194975597:user/testament
