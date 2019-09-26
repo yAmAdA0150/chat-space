@@ -1,5 +1,4 @@
 require_relative 'boot'
-
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -13,6 +12,7 @@ module ChatSpace
       g.javascripts false
       g.helper false
       g.test_framework false
+      config.time_zone = 'Tokyo'
     end
     config.i18n.default_locale = :ja
   end
